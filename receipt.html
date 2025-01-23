@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,18 +11,20 @@
         @page {
             size: A4 portrait;
             margin: 0mm 0mm;
-        } 
-        body { 
+            counter-reset: page;
+        }
+
+        body {
             padding-left: 14px;
             padding-right: 14px;
             font-family: 'Inter', sans-serif !important;
-            -webkit-print-color-adjust: exact !important; 
+            -webkit-print-color-adjust: exact !important;
         }
-        
+
         p {
             margin: 0;
         }
-        
+
         table {
             border-collapse: collapse;
             border-spacing: 0;
@@ -30,11 +33,10 @@
             table-layout: auto;
             font-family: 'Inter', sans-serif !important;
         }
-        
+
         td,
         th {
             padding: 0px;
-            /* vertical-align: center; */
             font-family: 'Inter', sans-serif !important;
         }
 
@@ -42,18 +44,44 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding-bottom: 6px; 
+            padding-bottom: 6px;
         }
 
         .qr-section p {
-            margin-top: 1.75px;  
+            margin-top: 1.75px;
         }
+
         .particulars tbody tr:nth-child(odd) {
             background-color: #15B76C14;
+        }
+
+        @media print {
+            thead {
+                display: table-header-group;
             }
-        
+
+            tbody {
+                display: table-row-group;
+            }
+
+            tr {
+                page-break-inside: avoid;
+            }
+
+            body::after {
+                content: "Page" counter(page);
+                counter-increment: page;
+                position: fixed;
+                top: 10mm;
+                right: 10mm;
+                font-size: 12px;
+                color: black;
+                font-family: Arial, sans-serif;
+            }
+        }
     </style>
 </head>
+
 <body>
     <table cellpadding="0" cellspacing="0" height="100%" width="595px">
         <tr>
@@ -61,48 +89,65 @@
                 <table cellpadding="0" cellspacing="0" width="100%">
                     <tr style="border-bottom: 1px solid #000000;">
                         <td>
-                            <img style="width: auto;" height="60px" src="./src/assets/img/Logo Component.png" alt="LOGO">
+                            <img style="width: auto;" height="60px" src="./src/assets/img/Logo Component.png"
+                                alt="LOGO">
                         </td>
                         <td align="right" class="">
                             <p style="font-size: 14px; font-weight: 400; padding-right: 5px;">page 1/2</p>
-                            <img style="width: 100px; height: 100px;" src="./src/assets/img/qrScan.png"/>
-                            <p style="font-size: 12px; font-weight: 700;line-height: 8.47px; padding-right: 5px; padding-bottom: 6px;">Invoice ID: SDF9823KD</p>
+                            <img style="width: 100px; height: 100px;" src="./src/assets/img/qrScan.png" />
+                            <p
+                                style="font-size: 12px; font-weight: 700;line-height: 8.47px; padding-right: 5px; padding-bottom: 6px;">
+                                Invoice ID: SDF9823KD</p>
                         </td>
                     </tr>
                 </table>
             </td>
         </tr>
 
-         
+
         <table>
             <thead>
                 <tr style="border-bottom: 2px  solid #000000;">
-                    <th style="display: flex; justify-content:  flex-start !important; font-size:16px; padding:30px 2px 30px 2px; text-transform: uppercase;">SAVINGS STATEMENT</th>
+                    <th
+                        style="display: flex; justify-content:  flex-start !important; font-size:16px; padding:30px 2px 30px 2px; text-transform: uppercase;">
+                        SAVINGS STATEMENT</th>
                 </tr>
             </thead>
-            </table>
+        </table>
 
 
-          <!--SAVINGS STATEMENT  -->
-        <tr> 
+        <!--SAVINGS STATEMENT  -->
+        <tr>
             <td widht="100%" valign="top" style="padding-top:10px;">
                 <table cellpadding="10" cellspacing="0" width="100%">
                     <tr style="border-top: 1px  solid #E9E9E9; border-bottom: 1px solid #E9E9E9;">
                         <td align="left" width="22%" style="padding:20px 2px 20px 2px">
-                            <p style="font-size:12px; line-height:20.89px; margin-bottom: 3px; font-weight:500; color: #9CA3AF;letter-spacing: 16%; text-transform: uppercase">HOME APPLICANT NAME</p>
-                            <p style="font-size:14px; line-height:10.89px; font-weight:bold; text-transform: uppercase">KELVIN MULLI OJALA</p>
+                            <p
+                                style="font-size:12px; line-height:20.89px; margin-bottom: 3px; font-weight:500; color: #9CA3AF;letter-spacing: 16%; text-transform: uppercase">
+                                HOME APPLICANT NAME</p>
+                            <p style="font-size:14px; line-height:10.89px; font-weight:bold; text-transform: uppercase">
+                                KELVIN MULLI OJALA</p>
                         </td>
                         <td align="left" width="22%" style="padding:20px">
-                            <p style="font-size:12px; line-height:20.89px; margin-bottom: 3px; font-weight:500; color: #9CA3AF;letter-spacing: 16%; text-transform: uppercase">Mobile</p>
-                            <p style="font-size:14px; line-height:10.89px; font-weight:bold; text-transform: uppercase">+2547 000 000</p>
+                            <p
+                                style="font-size:12px; line-height:20.89px; margin-bottom: 3px; font-weight:500; color: #9CA3AF;letter-spacing: 16%; text-transform: uppercase">
+                                Mobile</p>
+                            <p style="font-size:14px; line-height:10.89px; font-weight:bold; text-transform: uppercase">
+                                +2547 000 000</p>
                         </td>
                         <td align="left" width="22%" style="padding:20px">
-                            <p style="font-size:12px; line-height:20.89px; margin-bottom: 3px; font-weight:500; color: #9CA3AF;letter-spacing: 16%; text-transform: uppercase">DATE OF STATEMENT</p>
-                            <p style="font-size:14px; line-height:10.89px; font-weight:bold; text-transform: uppercase">13 April 2023</p>
+                            <p
+                                style="font-size:12px; line-height:20.89px; margin-bottom: 3px; font-weight:500; color: #9CA3AF;letter-spacing: 16%; text-transform: uppercase">
+                                DATE OF STATEMENT</p>
+                            <p style="font-size:14px; line-height:10.89px; font-weight:bold; text-transform: uppercase">
+                                13 April 2023</p>
                         </td>
                         <td align="left" width="22%" style="padding:20px">
-                            <p style="font-size:12px; line-height:20.89px; margin-bottom: 3px; font-weight:500; color: #9CA3AF;letter-spacing: 16%; text-transform: uppercase">EMAIL</p>
-                            <p style="font-size:14px; line-height:10.89px; font-weight:bold; text-transform: uppercase">01 Feb 2022- 07 Feb 2023</p>
+                            <p
+                                style="font-size:12px; line-height:20.89px; margin-bottom: 3px; font-weight:500; color: #9CA3AF;letter-spacing: 16%; text-transform: uppercase">
+                                EMAIL</p>
+                            <p style="font-size:14px; line-height:10.89px; font-weight:bold; text-transform: uppercase">
+                                01 Feb 2022- 07 Feb 2023</p>
                         </td>
                     </tr>
                 </table>
@@ -114,7 +159,9 @@
         <table>
             <thead>
                 <tr style="border-bottom: 2px  solid #000000;">
-                    <th style="display: flex; justify-content: center; padding: 30px 30px 20px 30px;   font-size: 20px; font-weight: 600;">Transaction Summary</th>
+                    <th
+                        style="display: flex; justify-content: center; padding: 30px 30px 20px 30px;   font-size: 20px; font-weight: 600;">
+                        Transaction Summary</th>
                 </tr>
             </thead>
             <tbody>
@@ -123,52 +170,60 @@
                         <table cellpadding="0" cellspacing="0" width="100%" style="margin-bottom: 10px;">
                             <tr>
                                 <td align="left" style="padding: 7px 10px 20px 7px;">
-                                    <p style="color: #9CA3AF; font-size:14px; font-weight: 700; line-height:16px;letter-spacing: 0.1em; text-transform: uppercase;">Transaction Type</p>
+                                    <p
+                                        style="color: #9CA3AF; font-size:14px; font-weight: 700; line-height:16px;letter-spacing: 0.1em; text-transform: uppercase;">
+                                        Transaction Type</p>
                                 </td>
                                 <td align="right" style="padding: 7px 10px 20px 7px;">
-                                    <p style="color: #9CA3AF; font-size:14px; font-weight: 600; line-height:16px; letter-spacing: 0.1em; text-transform: uppercase;">Amount</p>
-                                </td> 
+                                    <p
+                                        style="color: #9CA3AF; font-size:14px; font-weight: 600; line-height:16px; letter-spacing: 0.1em; text-transform: uppercase;">
+                                        Amount</p>
+                                </td>
                             </tr>
                             <tr style="border-bottom: 2px  solid #3C6921; background-color: #15B76C14;">
                                 <td style="padding: 20px;">
-                                    <p style=" font-size:15px; font-weight:bold; line-height:12px; color: #000000; text-transform: uppercase; letter-spacing: -1%">Savings</p>
+                                    <p
+                                        style=" font-size:15px; font-weight:bold; line-height:12px; color: #000000; text-transform: uppercase; letter-spacing: -1%">
+                                        Savings</p>
                                 </td>
-                                <td  align="right" style="padding: 20px;">
-                                    <p style=" font-size:15px; font-weight:500; line-height:12px; color: #000000; ">40,000</p>
+                                <td align="right" style="padding: 20px;">
+                                    <p style=" font-size:15px; font-weight:500; line-height:12px; color: #000000; ">
+                                        40,000</p>
                                 </td>
-                                
+
                             </tr>
-                           
-                        </table> 
+
+                        </table>
                     </td>
                 </tr>
             </tbody>
             <tfoot>
                 <tr>
                     <td align="right" style="text-align: right;">
-                        <table align="right" style="table-layout: auto;"> 
+                        <table align="right" style="table-layout: auto;">
                             <tr style="border-bottom: 1px solid #E9E9E9;">
-                                <td align="right" style="padding:20px;  font-size:15px; font-weight:bold;  text-transform: uppercase; "><span >Total Payable</span> <span style="margin-left: 23px;">KES 230,460.00</span> </td>
-                               
+                                <td align="right"
+                                    style="padding:20px;  font-size:15px; font-weight:bold;  text-transform: uppercase; ">
+                                    <span>Total Payable</span> <span style="margin-left: 23px;">KES 230,460.00</span>
+                                </td>
+
                             </tr>
-                        </table> 
+                        </table>
                     </td>
                 </tr>
             </tfoot>
-           
-        </table> 
-       
-<!-- Transaction Breakdown -->
-        <table>
-            <thead>
-                <tr style="border-bottom: 2px  solid #000000;">
-                    <th style="display: flex; justify-content: center; padding: 30px;  font-size: 20px; font-weight: 600;">Transaction Breakdown</th>
-                </tr> 
-            </thead> 
+
         </table>
 
+        <!-- Transaction Breakdown -->
         <table class="particulars">
             <thead>
+                <tr style="border-bottom: 2px  solid #000000;">
+                    <th colspan="7"
+                        style="text-align: center; padding: 30px; font-size: 20px; font-weight: 600; border-bottom: 2px solid #000; text-align: center; display: table-cell;">
+                        Transaction Breakdown
+                    </th>
+                </tr>
                 <tr>
                     <th align="left" style="text-transform: uppercase; padding: 20px 2px;">Date</th>
                     <th align="left" style="text-transform: uppercase; padding: 20px 2px;">PESA FLOW rEF. NO</th>
@@ -177,7 +232,7 @@
                     <th align="left" style="text-transform: uppercase; padding: 20px 2px;">TYPE</th>
                     <th align="left" style="text-transform: uppercase; padding: 20px 2px;">PHONE</th>
                     <th align="left" style="text-transform: uppercase; padding: 20px 2px;">AMOUNT</th>
-               </tr>
+                </tr>
             </thead>
             <tbody>
                 <tr>
@@ -228,12 +283,116 @@
                     <td style="padding:20px 5px 20px 10px">+2547 000 000 </td>
                     <td style="padding:20px 5px 20px 10px">40,000.00</td>
                 </tr>
-                
+
+
+
+                <tr>
+                    <td style="padding:20px 5px 20px 10px">01 Feb 2022</td>
+                    <td style="padding:20px 5px 20px 10px">BUDW8</td>
+                    <td style="padding:20px 5px 20px 10px">7GFWIU3434</td>
+                    <td style="padding:20px 5px 20px 10px">MPESA</td>
+                    <td style="padding:20px 5px 20px 10px">savings</td>
+                    <td style="padding:20px 5px 20px 10px">+2547 000 000 </td>
+                    <td style="padding:20px 5px 20px 10px">40,000.00</td>
+                </tr>
+                <tr>
+                    <td style="padding:20px 5px 20px 10px">01 Feb 2022</td>
+                    <td style="padding:20px 5px 20px 10px">BUDW8</td>
+                    <td style="padding:20px 5px 20px 10px">7GFWIU3434</td>
+                    <td style="padding:20px 5px 20px 10px">MPESA</td>
+                    <td style="padding:20px 5px 20px 10px">savings</td>
+                    <td style="padding:20px 5px 20px 10px">+2547 000 000 </td>
+                    <td style="padding:20px 5px 20px 10px">40,000.00</td>
+                </tr>
+
+                <tr>
+                    <td style="padding:20px 5px 20px 10px">01 Feb 2022</td>
+                    <td style="padding:20px 5px 20px 10px">BUDW8</td>
+                    <td style="padding:20px 5px 20px 10px">7GFWIU3434</td>
+                    <td style="padding:20px 5px 20px 10px">MPESA</td>
+                    <td style="padding:20px 5px 20px 10px">savings</td>
+                    <td style="padding:20px 5px 20px 10px">+2547 000 000 </td>
+                    <td style="padding:20px 5px 20px 10px">40,000.00</td>
+                </tr>
+
+                <tr>
+                    <td style="padding:20px 5px 20px 10px">01 Feb 2022</td>
+                    <td style="padding:20px 5px 20px 10px">BUDW8</td>
+                    <td style="padding:20px 5px 20px 10px">7GFWIU3434</td>
+                    <td style="padding:20px 5px 20px 10px">MPESA</td>
+                    <td style="padding:20px 5px 20px 10px">savings</td>
+                    <td style="padding:20px 5px 20px 10px">+2547 000 000 </td>
+                    <td style="padding:20px 5px 20px 10px">40,000.00</td>
+                </tr>
+
+                <tr>
+                    <td style="padding:20px 5px 20px 10px">01 Feb 2022</td>
+                    <td style="padding:20px 5px 20px 10px">BUDW8</td>
+                    <td style="padding:20px 5px 20px 10px">7GFWIU3434</td>
+                    <td style="padding:20px 5px 20px 10px">MPESA</td>
+                    <td style="padding:20px 5px 20px 10px">savings</td>
+                    <td style="padding:20px 5px 20px 10px">+2547 000 000 </td>
+                    <td style="padding:20px 5px 20px 10px">40,000.00</td>
+                </tr>
+
+
+
+
+                <tr>
+                    <td style="padding:20px 5px 20px 10px">01 Feb 2022</td>
+                    <td style="padding:20px 5px 20px 10px">BUDW8</td>
+                    <td style="padding:20px 5px 20px 10px">7GFWIU3434</td>
+                    <td style="padding:20px 5px 20px 10px">MPESA</td>
+                    <td style="padding:20px 5px 20px 10px">savings</td>
+                    <td style="padding:20px 5px 20px 10px">+2547 000 000 </td>
+                    <td style="padding:20px 5px 20px 10px">40,000.00</td>
+                </tr>
+                <tr>
+                    <td style="padding:20px 5px 20px 10px">01 Feb 2022</td>
+                    <td style="padding:20px 5px 20px 10px">BUDW8</td>
+                    <td style="padding:20px 5px 20px 10px">7GFWIU3434</td>
+                    <td style="padding:20px 5px 20px 10px">MPESA</td>
+                    <td style="padding:20px 5px 20px 10px">savings</td>
+                    <td style="padding:20px 5px 20px 10px">+2547 000 000 </td>
+                    <td style="padding:20px 5px 20px 10px">40,000.00</td>
+                </tr>
+
+                <tr>
+                    <td style="padding:20px 5px 20px 10px">01 Feb 2022</td>
+                    <td style="padding:20px 5px 20px 10px">BUDW8</td>
+                    <td style="padding:20px 5px 20px 10px">7GFWIU3434</td>
+                    <td style="padding:20px 5px 20px 10px">MPESA</td>
+                    <td style="padding:20px 5px 20px 10px">savings</td>
+                    <td style="padding:20px 5px 20px 10px">+2547 000 000 </td>
+                    <td style="padding:20px 5px 20px 10px">40,000.00</td>
+                </tr>
+
+                <tr>
+                    <td style="padding:20px 5px 20px 10px">01 Feb 2022</td>
+                    <td style="padding:20px 5px 20px 10px">BUDW8</td>
+                    <td style="padding:20px 5px 20px 10px">7GFWIU3434</td>
+                    <td style="padding:20px 5px 20px 10px">MPESA</td>
+                    <td style="padding:20px 5px 20px 10px">savings</td>
+                    <td style="padding:20px 5px 20px 10px">+2547 000 000 </td>
+                    <td style="padding:20px 5px 20px 10px">40,000.00</td>
+                </tr>
+
+                <tr>
+                    <td style="padding:20px 5px 20px 10px">01 Feb 2022</td>
+                    <td style="padding:20px 5px 20px 10px">BUDW8</td>
+                    <td style="padding:20px 5px 20px 10px">7GFWIU3434</td>
+                    <td style="padding:20px 5px 20px 10px">MPESA</td>
+                    <td style="padding:20px 5px 20px 10px">savings</td>
+                    <td style="padding:20px 5px 20px 10px">+2547 000 000 </td>
+                    <td style="padding:20px 5px 20px 10px">40,000.00</td>
+                </tr>
+
             </tbody>
         </table>
-      
-        
-        
+
+
+
     </table>
 </body>
+
 </html>
