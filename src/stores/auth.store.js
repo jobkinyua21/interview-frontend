@@ -14,7 +14,8 @@ export const useAuthStore = defineStore({
   actions: {
     async loginWithOAuth() {
       const clientId = "24f2b7cfa592cf8248345a9766493c7e";
-      const redirectUri = "http://localhost:5173/auth/redirect";
+      const redirectUri = "https://interview-pinia.vercel.app/auth/redirect"; 
+      // const redirectUri = "http://localhost:5173/auth/redirect";
       const authorizationUrl =
         "https://test.sso.pesaflow.com/en/oauth/authorize";
       const scope = "openid";
@@ -64,12 +65,13 @@ export const useAuthStore = defineStore({
     //     }
     //   }
     // },
-
+   
     async handleOAuthRedirect() {
       const code = new URLSearchParams(window.location.search).get("code");
       const clientId = "24f2b7cfa592cf8248345a9766493c7e";
       const clientSecret = "iTCvvnnzgiitAXnVNobfciArsUFPQEEh";
-      const redirectUri = "http://localhost:5173/auth/redirect";
+      // const redirectUri = "http://localhost:5173/auth/redirect";
+      const redirectUri = "https://interview-pinia.vercel.app/auth/redirect"; 
       const accessTokenUrl = "https://test.sso.pesaflow.com/oauth/access-token";
       try {
         const response = await axios.post(accessTokenUrl, {
