@@ -14,7 +14,8 @@ On clicking the login button, user is then redirected to https://test.sso.pesafl
 
 3. Home page :
 Upon successfull authentication the user gets to the home page ,where there is a card showing the logged in user names. The page also shows a list of some of the products the customer can browse  
-![Screenshot from 2025-01-24 10-28-27](https://github.com/user-attachments/assets/2d9d263d-646e-47e0-953d-b638d84bdc9b)
+![Screenshot from 2025-01-24 12-33-45](https://github.com/user-attachments/assets/f6ea8bbf-37fa-497c-958d-81f599c1504a)
+
 
 
 4. Logout button :
