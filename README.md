@@ -23,7 +23,8 @@ The logout button functions by clearing the user data that was stored in the pin
 5. PDF Output :
 There a receipt.html file which has a design of a sample pdf otput created using html and css
 ![Screenshot from 2025-01-24 10-30-40](https://github.com/user-attachments/assets/2c38cbc5-4f7d-44bd-8750-2f9633fe4aab)
-![Screenshot from 2025-01-24 10-30-40](https://github.com/user-attachments/assets/2b0f02ad-ca80-4a98-a1fc-5c7819ab56e3)
+ ![Screenshot2](https://github.com/user-attachments/assets/ac2297ff-c8ee-4cef-9573-9fcf331987f8)
+
 
 
 Installation :
@@ -32,7 +33,16 @@ Follow these steps to set up the project locally:
 Prerequisites :
 Ensure you have Node.js and npm installed.
 
-Clone the repository:
-git clone https://github.com/your-username/your-project-name.git
+Clone the repository :
+git clone https://github.com/jobkinyua21/interview-frontend.git
 cd your-project-name
+
+Install dependencies : 
+npm install
+
+Run the development server: 
+npm run dev
+
+Open the application in your browser : 
+http://localhost:5173
 
