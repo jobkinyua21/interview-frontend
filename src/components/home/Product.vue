@@ -17,6 +17,7 @@
         </span>
         <span>
           <button
+          @click="addToCart(item)"
             className="text-[12.73px] font-[600] leading-[15.41px] text-darkBlue uppercase"
           >
             Add to Cart
@@ -61,7 +62,14 @@ export default {
       ],
     };
   },
+  methods:{
+    addToCart(product){
+      const cartStore =  useCartStore()
+      cartStore.addToCart(product)
+    }
+  }
 };
+import { useCartStore } from "@/stores";
 import prod1 from "../../assets/img/Group 2.png";
 import prod2 from "../../assets/img/prod2.png";
 import prod3 from "../../assets/img/prod3.png";

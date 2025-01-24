@@ -1,8 +1,8 @@
-import { useAuthStore } from "@/stores";
+ import { useAuthStore } from "@/stores";
 import Home from "@/views/Home.vue";
 import Landing from "@/views/Landing.vue";
 import { createRouter, createWebHistory } from "vue-router";
-
+ 
 const routes = [
   {
     path: "/",
@@ -20,14 +20,15 @@ const routes = [
     beforeEnter: async (to, from, next) => {
       const authStore = useAuthStore();
       try {
-        await authStore.handleOAuthRedirect();
-        next({ name: "Home" });
+        await authStore.handleOAuthRedirect();   
+        next({ name: 'Home' });   
       } catch (error) {
         console.error("Error during OAuth login:", error);
-        next({ name: "Landing" });
+        next({ name: 'Landing' });   
       }
     },
   },
+  
 ];
 
 const router = createRouter({

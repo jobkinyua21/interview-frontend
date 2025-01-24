@@ -66,10 +66,10 @@ export const useAuthStore = defineStore({
       this.accessToken = null;
     },
     logout() {
-      this.user = null;
-      localStorage.removeItem("user");
+      this.clearUserData();
       localStorage.removeItem("access_token");
       window.location.href = "/";
     },
   },
+  persist: true,
 });
