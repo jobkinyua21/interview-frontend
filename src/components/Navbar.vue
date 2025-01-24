@@ -2,11 +2,7 @@
   <header>
     <nav class="flex justify-between items-center relative">
       <div>
-        <img
-          class="h-[31.38px]"
-          src=".././assets/img/Logo 1.png"
-          alt="logo"
-        />
+        <img class="h-[31.38px]" src=".././assets/img/Logo 1.png" alt="logo" />
       </div>
       <NavList class="hidden md:flex space-x-4 justify-between items-center" />
       <div v-if="isLoggedIn">
@@ -15,7 +11,7 @@
       <div v-else>
         <MainButton
           @click="loginWithOAuth"
-          class="hidden self-baseline md:block bg-lightBlue text-darkBlue"
+          class=" self-baseline md:block bg-lightBlue text-darkBlue"
         >
           Log In
         </MainButton>
@@ -31,29 +27,22 @@ import MainButton from "./MainButton.vue";
 import NavList from "./NavList.vue";
 import { ref, onMounted } from "vue";
 
-
 const authStore = useAuthStore();
 
-const isLoggedIn = ref(false);
-console.log("isLoggedIn",isLoggedIn)
+const isLoggedIn = ref(false); 
 
 onMounted(() => {
-  if (localStorage.getItem('access_token')) {
-    console.log("part1")
+  if (localStorage.getItem("access_token")) { 
     isLoggedIn.value = true;
-  } else {
-    console.log("part2")
+  } else { 
     isLoggedIn.value = false;
   }
 });
- 
 
 const loginWithOAuth = () => {
-  authStore.loginWithOAuth(); 
-  if (localStorage.getItem('access_token')) {
+  authStore.loginWithOAuth();
+  if (localStorage.getItem("access_token")) {
     isLoggedIn.value = true;
   }
 };
 </script>
-
- 

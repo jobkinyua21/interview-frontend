@@ -1,7 +1,7 @@
 <template>
   <Navbar />
   <WelcomeHome />
-  <Product/>
+  <Product />
 </template>
 
 <script setup>

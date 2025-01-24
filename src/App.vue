@@ -1,16 +1,12 @@
-<template> 
+<template>
   <ScrollTextVue></ScrollTextVue>
-  <div class="container mx-auto p-6"> 
+  <div class="container mx-auto p-6">
     <router-view></router-view>
   </div>
-    <main> 
-      
-    </main>
-    <Footer></Footer>
-  </template>
+  <main></main>
+  <Footer></Footer>
+</template>
 
-
-  <script setup>
+<script setup>
 import ScrollTextVue from "./components/ScrollText.vue";
 </script>
- 

@@ -1,5 +1,5 @@
 <template>
-  <div class="flex items-center justify-between p-4">
+  <div class="flex items-center justify-between lg:p-4 p-2">
     <div class="flex items-center space-x-4">
       <button
         class="bg-darkBlue w-[56px] h-[56px] p-4 lg:flex hidden items-center justify-center rounded-full"
@@ -32,7 +32,7 @@
             <img
               src="../../assets/svg7.svg"
               alt="User"
-              class="lg:w-8 w-20 lg:h-8 h-20 rounded-full"
+              class="lg:w-8 w-12 lg:h-8 h-12 rounded-full"
             />
           </button>
           <div
@@ -44,7 +44,7 @@
               {{ capitalizeFirstLetter(user?.last_name) }}
             </div>
             <div class="border-t"></div>
-            
+
             <button
               @click="logout"
               class="block px-4 py-2 text-red-600 hover:bg-gray-100 w-full text-left"
@@ -60,7 +60,7 @@
 
 <script>
 import { useAuthStore } from "@/stores";
- 
+
 export default {
   data() {
     return {
@@ -97,9 +97,8 @@ export default {
         )
         ?.join(" ");
     },
-  
   },
- 
+
   beforeDestroy() {
     document.removeEventListener("click", this.handleClickOutside);
   },
