@@ -36,6 +36,11 @@ Ensure you have Node.js and npm installed.
 
 Clone the repository :
 git clone https://github.com/jobkinyua21/interview-frontend.git
+cd proxy-server
+
+Install dependencies : 
+npm install
+
 cd your-project-name
 
 Install dependencies : 
