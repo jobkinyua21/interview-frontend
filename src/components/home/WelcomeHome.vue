@@ -9,7 +9,7 @@
         {{ capitalizeFirstLetter(user?.last_name) }}
       </span>
       <span className="font-[300px] lg:text-[21px] text-[18px] leading-[25.41px]">
-        Shop from our massive catalogue of backpacks for various seasons and
+        Shop from our  massive catalogue of backpacks for various seasons and
         moods
       </span>
       <span>
